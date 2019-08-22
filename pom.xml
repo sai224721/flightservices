@@ -32,7 +32,7 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<configuration>
-				 <deploymentType>arm</deploymentType>
+				 <deploymentType>cloudhub</deploymentType>
 				 <username>sai451</username>
 				 <password>Sweety@224721</password>
 				 <target>server</target>
