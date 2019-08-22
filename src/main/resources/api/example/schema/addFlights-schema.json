@@ -1,0 +1,97 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "code",
+    "price",
+    "origin",
+    "destination",
+    "departureDate",
+    "airlineName",
+    "planeType",
+    "emptySeats"
+  ],
+  "properties": {
+    "code": {
+      "$id": "#/properties/code",
+      "type": "string",
+      "title": "The Code Schema",
+      "default": "",
+      "examples": [
+        "ER3kfd"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "price": {
+      "$id": "#/properties/price",
+      "type": "integer",
+      "title": "The Price Schema",
+      "default": 0,
+      "examples": [
+        245
+      ]
+    },
+    "origin": {
+      "$id": "#/properties/origin",
+      "type": "string",
+      "title": "The Origin Schema",
+      "default": "",
+      "examples": [
+        "MUA"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "destination": {
+      "$id": "#/properties/destination",
+      "type": "string",
+      "title": "The Destination Schema",
+      "default": "",
+      "examples": [
+        "CLE"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "departureDate": {
+      "$id": "#/properties/departureDate",
+      "type": "string",
+      "title": "The Departuredate Schema",
+      "default": "",
+      "examples": [
+        "2015/08/11"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "airlineName": {
+      "$id": "#/properties/airlineName",
+      "type": "string",
+      "title": "The Airlinename Schema",
+      "default": "",
+      "examples": [
+        "United"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "planeType": {
+      "$id": "#/properties/planeType",
+      "type": "string",
+      "title": "The Planetype Schema",
+      "default": "",
+      "examples": [
+        "Boeing 747"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "emptySeats": {
+      "$id": "#/properties/emptySeats",
+      "type": "integer",
+      "title": "The Emptyseats Schema",
+      "default": 0,
+      "examples": [
+        13
+      ]
+    }
+  }
+}

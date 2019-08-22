@@ -1,0 +1,104 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "flineName",
+      "fCode",
+      "fDepdate",
+      "fDestin",
+      "fEmptyseats",
+      "fOrgin",
+      "fPlanetype",
+      "fprice"
+    ],
+    "properties": {
+      "flineName": {
+        "$id": "#/items/properties/flineName",
+        "type": "string",
+        "title": "The Flinename Schema",
+        "default": "",
+        "examples": [
+          "Delta"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "fCode": {
+        "$id": "#/items/properties/fCode",
+        "type": "string",
+        "title": "The Fcode Schema",
+        "default": "",
+        "examples": [
+          "A1B2C3"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "fDepdate": {
+        "$id": "#/items/properties/fDepdate",
+        "type": "string",
+        "title": "The Fdepdate Schema",
+        "default": "",
+        "examples": [
+          "2015/03/20"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "fDestin": {
+        "$id": "#/items/properties/fDestin",
+        "type": "string",
+        "title": "The Fdestin Schema",
+        "default": "",
+        "examples": [
+          "SFO"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "fEmptyseats": {
+        "$id": "#/items/properties/fEmptyseats",
+        "type": "string",
+        "title": "The Femptyseats Schema",
+        "default": "",
+        "examples": [
+          "40"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "fOrgin": {
+        "$id": "#/items/properties/fOrgin",
+        "type": "string",
+        "title": "The Forgin Schema",
+        "default": "",
+        "examples": [
+          "MUA"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "fPlanetype": {
+        "$id": "#/items/properties/fPlanetype",
+        "type": "string",
+        "title": "The Fplanetype Schema",
+        "default": "",
+        "examples": [
+          "Boing 737"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "fprice": {
+        "$id": "#/items/properties/fprice",
+        "type": "string",
+        "title": "The Fprice Schema",
+        "default": "",
+        "examples": [
+          "400.0"
+        ],
+        "pattern": "^(.*)$"
+      }
+    }
+  }
+}

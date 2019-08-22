@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="c77cfce8-1044-448e-854b-abaea51ee6fb" >
+		<http:request-connection host="mu.mulesoft-training.com" port="80" />
+	</http:request-config>
+	<sub-flow name="unitedFlightsSub_Flow" doc:id="0d35b9de-148d-4379-b99a-3871e05d7b4a" >
+		<logger level="INFO" doc:name="Logger" doc:id="f5ffb699-42b7-4fc5-b0fc-a3cd8c54cf53" message="connecting to unitedFlights......"/>
+		<http:request method="GET" doc:name="unitedFlightsRequest" doc:id="7284d840-507a-4989-93fc-d8449c3a2bc6" config-ref="HTTP_Request_configuration" path="#['/essentials/united/flights/' ++ attributes.queryParams.destination]"/>
+		<ee:transform doc:name="Transform Message" doc:id="b64dd79a-b9f7-4035-96ca-7425b827df3f" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</sub-flow>
+</mule>

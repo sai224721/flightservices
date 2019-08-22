@@ -1,0 +1,10 @@
+{
+	"code": "ER3kfd",
+	"price": 245,
+	"origin": "MUA",
+	"destination": "CLE",
+	"departureDate": "2015/08/11",
+	"airlineName": "United",
+	"planeType": "Boeing 747",
+	"emptySeats": 13
+}

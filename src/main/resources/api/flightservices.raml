@@ -1,0 +1,61 @@
+#%RAML 1.0
+title: Sample API
+/unitedFlights: 
+ get: 
+   queryParameters: 
+     destination:
+       required: true
+       minLength: 3
+       maxLength: 3
+   responses: 
+    200: 
+     body: 
+      application/json: 
+        schema: !include example/schema/addFlights-schema.json
+        example: !include example/addFlights.json
+        
+/deltaFlights:  
+  get: 
+    queryParameters: 
+      destination:
+        required: true
+        minLength: 3
+        maxLength: 3
+    responses: 
+      200: 
+        body: 
+          application/json: 
+            schema:  !include example/schema/deltaFlights-schema.json   
+            example:  !include example/deltaFlights.json
+             
+/allFlightsbyDestination:  
+  get: 
+    queryParameters: 
+      destination:
+        required: true
+        minLength: 3
+        maxLength: 3
+    responses: 
+      200: 
+        body: 
+          application/json: 
+          
+          
+/addFlights:
+ post:
+  body: 
+   application/json: 
+    schema: !include example/schema/addFlights-schema.json
+    example: !include example/addFlights.json
+    
+  responses: 
+   201: 
+    body: 
+     application/json: 
+      example: |
+               {
+               "message": "Flight Data Added Successfully...!"
+               }
+
+       
+              
