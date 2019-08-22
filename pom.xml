@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
+	<groupId>35f9798f-2fb3-401d-8198-9f09741b9e5b</groupId>
 	<artifactId>sample</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>mule-application</packaging>
 
 	<name>sample</name>
@@ -24,30 +24,34 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-				<configuration>
-				</configuration>
 			</plugin>
 			<plugin>
 			<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
-				<configuration>
-				 <deploymentType>cloudhub</deploymentType>
-				 <username>sai451</username>
-				 <password>Sweety@224721</password>
-				 <target>server</target>
-				 <environment>Sandbox</environment>
-				</configuration>
-				<executions>
-				<execution>
-				<id>deploy</id>
-				<phase>deploy</phase>
-				<goals>
-				<goal>deploy</goal>
-				</goals>
-				</execution>
-				</executions>
-			</plugin>
+				<configuration> 
+        <cloudHubDeployment> 
+          <muleVersion>${app.runtime}</muleVersion> 
+          <username>sai451</username> 
+          <password>Sweety@224721</password> 
+          <environment>Sandbox</environment> 
+          <!-- <region>eu-central-1</region>  -->
+          <workerType>Micro</workerType>
+          <workers>1</workers> 
+          <uri>https://anypoint.mulesoft.com</uri>; 
+          <applicationName>app-sample</applicationName> 
+        </cloudHubDeployment> 
+      </configuration> 
+      <executions> 
+        <execution> 
+          <id>deploy</id> 
+          <phase>deploy</phase> 
+          <goals> 
+            <goal>deploy</goal> 
+          </goals> 
+        </execution> 
+      </executions> 
+				</plugin>
 		</plugins>
 	</build>
 
